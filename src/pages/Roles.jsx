@@ -7,13 +7,13 @@ export default function Roles(selectedRole) {
     };
 
     return (
-        <select value= {selectedRole} onchange= {handleChange}>
+        <select value= {selectedRole} onChange= {handleChange}>
             <option value="">Get Started</option>
             <option value= "/questions/scrum-master">SCRUM Master</option>
             <option value= "/questions/product-owner">Product Owner</option>
-            <option Value= "/questions/ui-ux">UX/UI Designer</option>
-            <option Value= "/questions/web-developer"> Web Developer</option>
-            <option Value = "/questions/python-Developer">Python Developer</option>
+            <option value= "/questions/ui-ux">UX/UI Designer</option>
+            <option value= "/questions/web-developer"> Web Developer</option>
+            <option value = "/questions/python-Developer">Python Developer</option>
         </select>
     )
 };
