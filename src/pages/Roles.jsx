@@ -1,35 +1,38 @@
 import Header from "../components/Header.jsx"
 import Footer from "../components/Footer.jsx"
+import { roles } from "../data/roles.js";
+import { useNavigate } from "react-router-dom";
 
-export default function Roles(selectedRole) {
+export default function Roles() {
+
+    const navigate= useNavigate()
+    
+    
+    
     const handleChange = (e) => {
-        const path = e.target.value;
-        if (path) {
-            window.location.href=path 
+        const roleId= e.target.value;
+        if (roleId) {
+            navigate(`/questions/${roleId}`) 
         }
     };
 
-    return (
-         
-         
-        
-          
-            <>
-             
-                <Header/>
-            
+    
 
-        <select className ="roleslist" value= {selectedRole} onChange= {handleChange}>
+    return (          
+            <>
+
+                <Header/>            
+
+        <select className ="roleslist" defaultValue="" onChange= {handleChange}>
             <option value="" disabled>Get Started</option>
-            <option value= "/questions/scrum-master">SCRUM Master</option>
-            <option value= "/questions/product-owner">Product Owner</option>
-            <option value= "/questions/ui-ux">UX/UI Designer</option>
-            <option value= "/questions/web-developer"> Web Developer</option>
-            <option value = "/questions/python-Developer">Python Developer</option>
+
+            {roles.map(role => (
+            <option key={role.id} value={role.id}>
+               {role.label}
+            </option>
+            ))}
         </select>
 
-        
-    
             <Footer/>
         
         
