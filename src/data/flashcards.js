@@ -1,4 +1,4 @@
-export const data = [
+const questions = [
   {
     "role": "Scrum Product Owner",
     "focus": "Backlog management, maximizing value, stakeholder management (Aligns with CSPO)",
@@ -330,3 +330,5 @@ export const data = [
     ]
   }
 ]
+
+export default questions;
